@@ -1,0 +1,57 @@
+version: 2
+
+sources:
+  - name: database
+    tables:
+      - name: bronze_layer
+        description: "raw data imported from the CSV file."
+        columns:
+          - name: "Unnamed: 0"
+            description: "index."
+            tests:
+              - not_null
+              - unique
+          - name: stationShortCode
+            description: "station code."
+            tests:
+              - not_null
+          - name: stationUICCode
+            description: "UIC station code."
+            tests:
+              - not_null
+
+          - name: countryCode
+            description: "Station location."
+            tests:
+              - not_null
+
+          - name: type
+            description: "type of the record (ARRIVAL or DEPARTURE)."
+            tests:
+              - not_null
+
+          - name: trainStopping
+            description: "indicator, if the train stops at the station."
+            tests:
+              - not_null
+
+          - name: 'commercialTrack'
+            description: 'track number for commercial stops.'
+
+          - name: 'actualTime'
+            description: 'the actual time of train arrival/departure.'
+
+          - name: 'differenceInMinutes'
+            description: 'difference in minutes between scheduled and actual time.'
+
+          - name: 'causes'
+            description: 'causes of delays and cancellations.'
+
+          - name: 'trainReady'
+            description: 'information.'
+
+          - name: 'liveEstimateTime'
+            description: 'live estimated time of arrival and departure.'
+            
+          - name: 'estimateSource'
+            description: 'source of the live estimate.'

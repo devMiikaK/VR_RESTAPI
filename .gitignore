@@ -1,0 +1,5 @@
+.venv
+logs
+archive/dbt_example
+backup
+_main/data/*
